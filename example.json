@@ -1,0 +1,88 @@
+{
+  "name": "John Doe",
+  "title": "Senior Software Engineer",
+  "email": "john.doe@email.com",
+  "phone": "(555) 123-4567",
+  "location": "San Francisco, CA",
+  "linkedin": "linkedin.com/in/johndoe",
+  "github": "github.com/johndoe",
+  "website": "",
+  "summary": "Experienced Senior Software Engineer with 8+ years of expertise in designing and implementing scalable web applications and distributed systems. Proven track record of leading cross-functional teams and delivering high-quality software solutions. Passionate about clean code, best practices, and mentoring junior developers.",
+  "experience": [
+    {
+      "title": "Senior Software Engineer",
+      "company": "TechCorp Inc.",
+      "startDate": "June 2020",
+      "endDate": "Present",
+      "responsibilities": [
+        "Led a team of 5 engineers in developing a microservices architecture that improved system scalability by 300%",
+        "Implemented CI/CD pipelines reducing deployment time from 2 hours to 15 minutes",
+        "Mentored junior developers through code reviews and pair programming sessions",
+        "Architected and deployed cloud-native solutions using AWS, reducing infrastructure costs by 40%"
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Digital Solutions Ltd.",
+      "startDate": "March 2018",
+      "endDate": "May 2020",
+      "responsibilities": [
+        "Developed RESTful APIs serving 1M+ daily requests with 99.9% uptime",
+        "Optimized database queries resulting in 50% improvement in application performance",
+        "Collaborated with product team to deliver features that increased user engagement by 25%",
+        "Implemented comprehensive testing strategies achieving 85% code coverage"
+      ]
+    },
+    {
+      "title": "Junior Software Developer",
+      "company": "StartupXYZ",
+      "startDate": "January 2016",
+      "endDate": "February 2018",
+      "responsibilities": [
+        "Built responsive web applications using React and Node.js",
+        "Participated in agile development processes and daily stand-ups",
+        "Contributed to open-source projects and internal documentation"
+      ]
+    }
+  ],
+  "technicalSkills": [
+    {
+      "category": "Languages",
+      "items": ["JavaScript", "Python", "Go", "Java", "TypeScript", "SQL", "C++"]
+    },
+    {
+      "category": "Frameworks",
+      "items": ["React", "Node.js", "Django", "Spring Boot", "Express", "Next.js", "FastAPI"]
+    },
+    {
+      "category": "Databases",
+      "items": ["PostgreSQL", "MongoDB", "Redis", "MySQL", "DynamoDB", "Elasticsearch"]
+    },
+    {
+      "category": "Tools & Technologies",
+      "items": ["Docker", "Kubernetes", "AWS", "Git", "CI/CD", "GraphQL", "Terraform", "Jenkins"]
+    }
+  ],
+  "softSkills": [
+    {
+      "category": "Leadership",
+      "items": ["Team Management", "Mentoring", "Technical Leadership", "Cross-functional Collaboration"]
+    },
+    {
+      "category": "Communication",
+      "items": ["Technical Documentation", "Stakeholder Management", "Presentation Skills", "Code Reviews"]
+    },
+    {
+      "category": "Problem Solving",
+      "items": ["System Design", "Architecture Planning", "Performance Optimization", "Debugging"]
+    },
+    {
+      "category": "Methodologies",
+      "items": ["Agile/Scrum", "Test-Driven Development", "Continuous Integration", "DevOps Practices"]
+    }
+  ],
+  "education": [],
+  "projects": [],
+  "certifications": [],
+  "languages": []
+}

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Name}} - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 50px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        header .title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info span::before {
+            content: '•';
+            margin-right: 8px;
+            color: #3498db;
+        }
+
+        .contact-info span:first-child::before {
+            content: '';
+            margin: 0;
+        }
+
+        main {
+            padding: 40px 50px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #3498db;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .summary {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+        }
+
+        .experience-header, .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .job-title, .degree {
+            font-weight: 600;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+
+        .company, .school {
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        .date {
+            color: #777;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .responsibilities {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibilities li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .responsibilities li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .skill-items {
+            color: #555;
+            font-size: 14px;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            
+            body {
+                background: white;
+                margin: 0;
+                font-size: 11pt;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            
+            header {
+                padding: 20px 30px;
+                background: #2c3e50 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            header h1 {
+                font-size: 28px;
+                margin-bottom: 5px;
+            }
+            
+            header .title {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+            
+            .contact-info {
+                font-size: 11px;
+                gap: 15px;
+            }
+            
+            main {
+                padding: 20px 30px;
+            }
+            
+            section {
+                margin-bottom: 18px;
+            }
+            
+            h2 {
+                font-size: 14px;
+                margin-bottom: 10px;
+                padding-bottom: 3px;
+                border-bottom: 1.5px solid #3498db;
+            }
+            
+            .summary {
+                font-size: 11px;
+                line-height: 1.5;
+                margin-bottom: 0;
+            }
+            
+            .experience-item, .education-item {
+                margin-bottom: 15px;
+            }
+            
+            .experience-item:last-child {
+                margin-bottom: 0;
+            }
+            
+            .job-title, .degree {
+                font-size: 12px;
+            }
+            
+            .company, .school {
+                font-size: 12px;
+            }
+            
+            .date {
+                font-size: 10px;
+            }
+            
+            .experience-header, .education-header {
+                margin-bottom: 5px;
+            }
+            
+            .responsibilities li {
+                font-size: 11px;
+                margin-bottom: 4px;
+                line-height: 1.4;
+                padding-left: 15px;
+            }
+            
+            .skill-category {
+                margin-bottom: 5px;
+            }
+            
+            .skill-label {
+                font-size: 11px;
+                margin-bottom: 2px;
+            }
+            
+            .skill-items {
+                font-size: 10px;
+            }
+            
+            .skills-grid {
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header, main {
+                padding: 30px 20px;
+            }
+            
+            header h1 {
+                font-size: 28px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-header, .education-header {
+                flex-direction: column;
+            }
+            
+            .date {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{.Name}}</h1>
+            <div class="title">{{.Title}}</div>
+            <div class="contact-info">
+                {{if .Email}}<span>{{.Email}}</span>{{end}}
+                {{if .Phone}}<span>{{.Phone}}</span>{{end}}
+                {{if .Location}}<span>{{.Location}}</span>{{end}}
+                {{if .LinkedIn}}<span>{{.LinkedIn}}</span>{{end}}
+                {{if .GitHub}}<span>{{.GitHub}}</span>{{end}}
+                {{if .Website}}<span>{{.Website}}</span>{{end}}
+            </div>
+        </header>
+
+        <main>
+            {{if .Summary}}
+            <section>
+                <h2>Professional Summary</h2>
+                <p class="summary">
+                    {{.Summary}}
+                </p>
+            </section>
+            {{end}}
+
+            {{if .Experience}}
+            <section>
+                <h2>Experience</h2>
+                {{range .Experience}}
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="job-title">{{.Title}}</span>
+                            <span class="company"> - {{.Company}}</span>
+                        </div>
+                        <span class="date">{{.StartDate}}{{if .EndDate}} - {{.EndDate}}{{end}}</span>
+                    </div>
+                    {{if .Responsibilities}}
+                    <ul class="responsibilities">
+                        {{range .Responsibilities}}
+                        <li>{{.}}</li>
+                        {{end}}
+                    </ul>
+                    {{end}}
+                </div>
+                {{end}}
+            </section>
+            {{end}}
+
+            {{if or .TechnicalSkills .SoftSkills}}
+            <section>
+                <h2>Skills</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    {{if .TechnicalSkills}}
+                    <div>
+                        {{range .TechnicalSkills}}
+                        <div class="skill-category">
+                            <div class="skill-label">{{.Category}}:</div>
+                            <div class="skill-items">{{range $i, $item := .Items}}{{if $i}}, {{end}}{{$item}}{{end}}</div>
+                        </div>
+                        {{end}}
+                    </div>
+                    {{end}}
+                    {{if .SoftSkills}}
+                    <div>
+                        {{range .SoftSkills}}
+                        <div class="skill-category">
+                            <div class="skill-label">{{.Category}}:</div>
+                            <div class="skill-items">{{range $i, $item := .Items}}{{if $i}}, {{end}}{{$item}}{{end}}</div>
+                        </div>
+                        {{end}}
+                    </div>
+                    {{end}}
+                </div>
+            </section>
+            {{end}}
+
+            {{if .Education}}
+            <section>
+                <h2>Education</h2>
+                {{range .Education}}
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <span class="degree">{{.Degree}}</span>
+                            <span class="school"> - {{.School}}</span>
+                        </div>
+                        <span class="date">{{.StartDate}}{{if .EndDate}} - {{.EndDate}}{{end}}</span>
+                    </div>
+                    {{if .Description}}
+                    <p class="education-description">{{.Description}}</p>
+                    {{end}}
+                </div>
+                {{end}}
+            </section>
+            {{end}}
+
+            {{if .Projects}}
+            <section>
+                <h2>Projects</h2>
+                {{range .Projects}}
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="job-title">{{.Name}}</span>
+                            {{if .URL}}<span class="company"> - {{.URL}}</span>{{end}}
+                        </div>
+                        {{if .Date}}<span class="date">{{.Date}}</span>{{end}}
+                    </div>
+                    {{if .Description}}
+                    <p style="margin-bottom: 8px; color: #555;">{{.Description}}</p>
+                    {{end}}
+                    {{if .Highlights}}
+                    <ul class="responsibilities">
+                        {{range .Highlights}}
+                        <li>{{.}}</li>
+                        {{end}}
+                    </ul>
+                    {{end}}
+                </div>
+                {{end}}
+            </section>
+            {{end}}
+
+            {{if .Certifications}}
+            <section>
+                <h2>Certifications</h2>
+                {{range .Certifications}}
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <span class="degree">{{.Name}}</span>
+                            {{if .Issuer}}<span class="school"> - {{.Issuer}}</span>{{end}}
+                        </div>
+                        {{if .Date}}<span class="date">{{.Date}}</span>{{end}}
+                    </div>
+                </div>
+                {{end}}
+            </section>
+            {{end}}
+
+            {{if .Languages}}
+            <section>
+                <h2>Languages</h2>
+                <div class="skill-items">
+                    {{range $i, $lang := .Languages}}{{if $i}}, {{end}}{{$lang.Name}}{{if $lang.Proficiency}} ({{$lang.Proficiency}}){{end}}{{end}}
+                </div>
+            </section>
+            {{end}}
+        </main>
+    </div>
+</body>
+</html>

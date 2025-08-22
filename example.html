@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 50px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        header .title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info span::before {
+            content: '•';
+            margin-right: 8px;
+            color: #3498db;
+        }
+
+        .contact-info span:first-child::before {
+            content: '';
+            margin: 0;
+        }
+
+        main {
+            padding: 40px 50px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #3498db;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .summary {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+        }
+
+        .experience-header, .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .job-title, .degree {
+            font-weight: 600;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+
+        .company, .school {
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        .date {
+            color: #777;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .responsibilities {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibilities li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .responsibilities li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .skill-items {
+            color: #555;
+            font-size: 14px;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            
+            body {
+                background: white;
+                margin: 0;
+                font-size: 11pt;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            
+            header {
+                padding: 20px 30px;
+                background: #2c3e50 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            header h1 {
+                font-size: 28px;
+                margin-bottom: 5px;
+            }
+            
+            header .title {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+            
+            .contact-info {
+                font-size: 11px;
+                gap: 15px;
+            }
+            
+            main {
+                padding: 20px 30px;
+            }
+            
+            section {
+                margin-bottom: 18px;
+            }
+            
+            h2 {
+                font-size: 14px;
+                margin-bottom: 10px;
+                padding-bottom: 3px;
+                border-bottom: 1.5px solid #3498db;
+            }
+            
+            .summary {
+                font-size: 11px;
+                line-height: 1.5;
+                margin-bottom: 0;
+            }
+            
+            .experience-item, .education-item {
+                margin-bottom: 15px;
+            }
+            
+            .experience-item:last-child {
+                margin-bottom: 0;
+            }
+            
+            .job-title, .degree {
+                font-size: 12px;
+            }
+            
+            .company, .school {
+                font-size: 12px;
+            }
+            
+            .date {
+                font-size: 10px;
+            }
+            
+            .experience-header, .education-header {
+                margin-bottom: 5px;
+            }
+            
+            .responsibilities li {
+                font-size: 11px;
+                margin-bottom: 4px;
+                line-height: 1.4;
+                padding-left: 15px;
+            }
+            
+            .skill-category {
+                margin-bottom: 5px;
+            }
+            
+            .skill-label {
+                font-size: 11px;
+                margin-bottom: 2px;
+            }
+            
+            .skill-items {
+                font-size: 10px;
+            }
+            
+            .skills-grid {
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header, main {
+                padding: 30px 20px;
+            }
+            
+            header h1 {
+                font-size: 28px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-header, .education-header {
+                flex-direction: column;
+            }
+            
+            .date {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>John Doe</h1>
+            <div class="title">Senior Software Engineer</div>
+            <div class="contact-info">
+                <span>john.doe@email.com</span>
+                <span>(555) 123-4567</span>
+                <span>San Francisco, CA</span>
+                <span>linkedin.com/in/johndoe</span>
+                <span>github.com/johndoe</span>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h2>Professional Summary</h2>
+                <p class="summary">
+                    Experienced Senior Software Engineer with 8+ years of expertise in designing and implementing scalable web applications and distributed systems. Proven track record of leading cross-functional teams and delivering high-quality software solutions. Passionate about clean code, best practices, and mentoring junior developers.
+                </p>
+            </section>
+
+            <section>
+                <h2>Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="job-title">Senior Software Engineer</span>
+                            <span class="company"> - TechCorp Inc.</span>
+                        </div>
+                        <span class="date">June 2020 - Present</span>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Led a team of 5 engineers in developing a microservices architecture that improved system scalability by 300%</li>
+                        <li>Implemented CI/CD pipelines reducing deployment time from 2 hours to 15 minutes</li>
+                        <li>Mentored junior developers through code reviews and pair programming sessions</li>
+                        <li>Architected and deployed cloud-native solutions using AWS, reducing infrastructure costs by 40%</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="job-title">Software Engineer</span>
+                            <span class="company"> - Digital Solutions Ltd.</span>
+                        </div>
+                        <span class="date">March 2018 - May 2020</span>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Developed RESTful APIs serving 1M+ daily requests with 99.9% uptime</li>
+                        <li>Optimized database queries resulting in 50% improvement in application performance</li>
+                        <li>Collaborated with product team to deliver features that increased user engagement by 25%</li>
+                        <li>Implemented comprehensive testing strategies achieving 85% code coverage</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <span class="job-title">Junior Software Developer</span>
+                            <span class="company"> - StartupXYZ</span>
+                        </div>
+                        <span class="date">January 2016 - February 2018</span>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Built responsive web applications using React and Node.js</li>
+                        <li>Participated in agile development processes and daily stand-ups</li>
+                        <li>Contributed to open-source projects and internal documentation</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Skills</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div>
+                        <div class="skill-category">
+                            <div class="skill-label">Languages:</div>
+                            <div class="skill-items">JavaScript, Python, Go, Java, TypeScript, SQL, C++</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-label">Frameworks:</div>
+                            <div class="skill-items">React, Node.js, Django, Spring Boot, Express, Next.js, FastAPI</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-label">Databases:</div>
+                            <div class="skill-items">PostgreSQL, MongoDB, Redis, MySQL, DynamoDB, Elasticsearch</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-label">Tools & Technologies:</div>
+                            <div class="skill-items">Docker, Kubernetes, AWS, Git, CI/CD, GraphQL, Terraform, Jenkins</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="skill-category">
+                            <div class="skill-label">Leadership:</div>
+                            <div class="skill-items">Team Management, Mentoring, Technical Leadership, Cross-functional Collaboration</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-label">Communication:</div>
+                            <div class="skill-items">Technical Documentation, Stakeholder Management, Presentation Skills, Code Reviews</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-label">Problem Solving:</div>
+                            <div class="skill-items">System Design, Architecture Planning, Performance Optimization, Debugging</div>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-label">Methodologies:</div>
+                            <div class="skill-items">Agile/Scrum, Test-Driven Development, Continuous Integration, DevOps Practices</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
